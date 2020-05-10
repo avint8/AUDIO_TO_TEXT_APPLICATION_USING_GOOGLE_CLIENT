@@ -12,7 +12,7 @@ def func():
         a=r.recognize_google(audio)
         
         os.remove("file.wav")
-        f=open(r'static\speech.doc','w+')
+        f=open('static/speech.doc','w+')
         f.write(a)
         f.close()
         print(a)
