@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>audio to speech</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
-    <h1>audio to speech</h1>
 
-    <div id="controls">
-     <button id="recordButton">Record</button>
-     <button id="pauseButton" disabled>Pause</button>
-     <button id="stopButton" disabled>Stop</button>
+
+  <body class="container">
+    <div class="jumbotron">
+      <h1>Audio to speech</h1>
+
+      <div id="controls" class="row">
+      <button id="recordButton" class="btn btn-success btn-lg">Record</button>
+      <button id="pauseButton" disabled class="btn btn-warning btn-lg">Pause</button>
+      <button id="stopButton" disabled class="btn btn-danger btn-lg">Stop</button>
+      </div>
     </div>
-
-    <p><strong>Recordings:</strong></p>
-    <ol id="recordingsList"></ol>
-    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
-    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
-
-
-    <h1><a href="{{url_for('trans')}}">convert to text</a></h1>
+    <div class="jumbotron" id="rec" style="display:none;">
+      <p><strong>Recordings:</strong></p>
+      <ol id="recordingsList" class="list-group"></ol>
+      <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+      <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+      <script src="{{ url_for('static', filename='app.js') }}"></script>
+  
+    </div>
     
-    <div>
-      <h1>{{text}}</h1>
-    </div>
+    <div class="jumbotron" id="conv" style="display:none;">
+      <h1><a href="{{url_for('trans')}}" class="btn btn-info btn-lg">convert to text</a></h1>
 
+      <div>
+      <h1>{{text}}</h1>
+      </div>
+    </div>
+    
   </body>
 </html>

@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<head>
-    <title>
-        your text is
-    </title>
-</head>
-<body>
-    <div >
-        <h2>{{text}}</h2>
-    </div>
-    <div>
-        <a href="{{ url_for('static', filename='speech.doc') }}" download>Download text file</a>
-    </div>
-
-    <div>
-        <div ><a href="{{url_for('index')}}" >Back to Home</a></div>
-    </div>
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Your TEXT is
+        </title>
+    </head>
+    <body class="container">
+        <div class="jumbotron">
+            <h1>TEXT</h1>
+            <h2>{{text}}</h2>
+        </div>
+        <div class="jumbotron">
+            <a href="{{ url_for('static', filename='speech.doc') }}" download class="btn btn-success btn-lg">Download text file</a>
+        </div>
+    
+        <div class="jumbotron">
+            <div ><a href="{{url_for('index')}}" class="btn btn-info btn-lg">Back to Home</a></div>
+        </div>
+    </body>
+</html>
